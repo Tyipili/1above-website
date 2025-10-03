@@ -7,140 +7,117 @@
     <link rel="stylesheet" href="admin-styles.css">
 </head>
 <body>
-    <!-- Login Screen -->
-    <div id="loginScreen" class="login-screen">
-        <div class="login-box">
-            <div class="login-logo">
-                <img src="logo.png" alt="1Above Logo">
+    <!-- Admin Panel (No login screen - .htaccess handles it) -->
+    <div class="admin-header">
+        <h1>1Above Admin Panel</h1>
+        <a href="index.html" class="btn-back">Back to Site</a>
+    </div>
+
+    <div class="container">
+        <div id="messageContainer"></div>
+
+        <div class="instructions">
+            <h3>⚠️ Important Instructions</h3>
+            <p>This admin panel works with the browser's local file system. To save changes permanently:</p>
+            <p>1. Click <strong>"Export Products JSON"</strong> after making changes</p>
+            <p>2. Save the downloaded <code>products.json</code> file</p>
+            <p>3. Replace the <code>products.json</code> file on your server with the new one</p>
+            <p>Your changes are stored in the browser until you export and upload the file.</p>
+        </div>
+
+        <div class="export-section">
+            <h3>Import / Export</h3>
+            <div class="export-buttons">
+                <button class="btn-export" onclick="exportProducts()">📥 Export Products JSON</button>
+                <button class="btn-import" onclick="document.getElementById('importFile').click()">📤 Import Products JSON</button>
+                <input type="file" id="importFile" accept=".json" onchange="importProducts(event)">
             </div>
-            <h2>Admin Login</h2>
-            <form id="loginForm" onsubmit="login(event)">
-                <div class="login-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter admin password" required>
-                </div>
-                <button type="submit" class="btn-login">Login</button>
-                <p id="loginError" class="login-error"></p>
-            </form>
+        </div>
+
+        <div class="actions">
+            <h2>Product Management</h2>
+            <button class="btn-add" onclick="openModal()">+ Add New Product</button>
+        </div>
+
+        <div class="products-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Emoji</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Badge</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                    <tr>
+                        <td colspan="7" class="loading">Loading products...</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Admin Panel (Hidden until logged in) -->
-    <div id="adminPanel" style="display: none;">
-        <div class="admin-header">
-            <h1>1Above Admin Panel</h1>
-            <div>
-                <button onclick="logout()" class="btn-logout">Logout</button>
-                <a href="index.html" class="btn-back">Back to Site</a>
-            </div>
-        </div>
-
-        <div class="container">
-            <div id="messageContainer"></div>
-
-            <div class="instructions">
-                <h3>⚠️ Important Instructions</h3>
-                <p>This admin panel works with the browser's local file system. To save changes permanently:</p>
-                <p>1. Click <strong>"Export Products JSON"</strong> after making changes</p>
-                <p>2. Save the downloaded <code>products.json</code> file</p>
-                <p>3. Replace the <code>products.json</code> file on your server with the new one</p>
-                <p>Your changes are stored in the browser until you export and upload the file.</p>
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Product</h2>
+                <button class="btn-close" onclick="closeModal()">&times;</button>
             </div>
 
-            <div class="export-section">
-                <h3>Import / Export</h3>
-                <div class="export-buttons">
-                    <button class="btn-export" onclick="exportProducts()">📥 Export Products JSON</button>
-                    <button class="btn-import" onclick="document.getElementById('importFile').click()">📤 Import Products JSON</button>
-                    <input type="file" id="importFile" accept=".json" onchange="importProducts(event)">
-                </div>
-            </div>
+            <form id="productForm" onsubmit="saveProduct(event)">
+                <input type="hidden" id="productId">
+                <input type="hidden" id="productIndex">
 
-            <div class="actions">
-                <h2>Product Management</h2>
-                <button class="btn-add" onclick="openModal()">+ Add New Product</button>
-            </div>
-
-            <div class="products-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Emoji</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Badge</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="productsTableBody">
-                        <tr>
-                            <td colspan="7" class="loading">Loading products...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Product Modal -->
-        <div id="productModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 id="modalTitle">Add New Product</h2>
-                    <button class="btn-close" onclick="closeModal()">&times;</button>
+                <div class="form-group">
+                    <label for="productName">Product Name <span class="required">*</span></label>
+                    <input type="text" id="productName" required>
                 </div>
 
-                <form id="productForm" onsubmit="saveProduct(event)">
-                    <input type="hidden" id="productId">
-                    <input type="hidden" id="productIndex">
+                <div class="form-group">
+                    <label for="productDescription">Description <span class="required">*</span></label>
+                    <textarea id="productDescription" required></textarea>
+                    <p class="form-help">Provide a detailed description of the product</p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="productName">Product Name <span class="required">*</span></label>
-                        <input type="text" id="productName" required>
-                    </div>
+                <div class="form-group">
+                    <label for="productPrice">Price <span class="required">*</span></label>
+                    <input type="text" id="productPrice" placeholder="$45.99" required>
+                    <p class="form-help">Include the $ symbol (e.g., $45.99)</p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="productDescription">Description <span class="required">*</span></label>
-                        <textarea id="productDescription" required></textarea>
-                        <p class="form-help">Provide a detailed description of the product</p>
-                    </div>
+                <div class="form-group">
+                    <label for="productEmoji">Emoji <span class="required">*</span></label>
+                    <input type="text" id="productEmoji" placeholder="💨" required maxlength="4">
+                    <p class="form-help">Single emoji to represent the product</p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="productPrice">Price <span class="required">*</span></label>
-                        <input type="text" id="productPrice" placeholder="$45.99" required>
-                        <p class="form-help">Include the $ symbol (e.g., $45.99)</p>
-                    </div>
+                <div class="form-group">
+                    <label for="productCategory">Category <span class="required">*</span></label>
+                    <select id="productCategory" required>
+                        <option value="">Select a category</option>
+                        <option value="vapes">Vapes</option>
+                        <option value="edibles">Edibles</option>
+                        <option value="flower">Flower</option>
+                        <option value="concentrates">Concentrates</option>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label for="productEmoji">Emoji <span class="required">*</span></label>
-                        <input type="text" id="productEmoji" placeholder="💨" required maxlength="4">
-                        <p class="form-help">Single emoji to represent the product</p>
-                    </div>
+                <div class="form-group">
+                    <label for="productBadge">Badge (Optional)</label>
+                    <input type="text" id="productBadge" placeholder="Best Seller, New, Premium">
+                    <p class="form-help">Leave empty for no badge</p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="productCategory">Category <span class="required">*</span></label>
-                        <select id="productCategory" required>
-                            <option value="">Select a category</option>
-                            <option value="vapes">Vapes</option>
-                            <option value="edibles">Edibles</option>
-                            <option value="flower">Flower</option>
-                            <option value="concentrates">Concentrates</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="productBadge">Badge (Optional)</label>
-                        <input type="text" id="productBadge" placeholder="Best Seller, New, Premium">
-                        <p class="form-help">Leave empty for no badge</p>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-                        <button type="submit" class="btn-submit">Save Product</button>
-                    </div>
-                </form>
-            </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Save Product</button>
+                </div>
+            </form>
         </div>
     </div>
 
