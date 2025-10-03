@@ -10,6 +10,99 @@ body {
     color: #333;
 }
 
+/* Login Screen */
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1C352D 0%, #2A4D42 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.login-box {
+    background: white;
+    padding: 50px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.login-logo {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1C352D;
+    margin-bottom: 15px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.login-box h2 {
+    color: #1C352D;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.login-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1C352D;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-group input:focus {
+    outline: none;
+    border-color: #C8A951;
+}
+
+.btn-login {
+    width: 100%;
+    background: #C8A951;
+    color: #1C352D;
+    padding: 15px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background: #B39641;
+}
+
+.login-error {
+    color: #d32f2f;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
 /* Header */
 .admin-header {
     background: #1C352D;
@@ -27,6 +120,29 @@ body {
     font-style: italic;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.admin-header div {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-logout {
+    background: #d32f2f;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #b71c1c;
 }
 
 .btn-back {
