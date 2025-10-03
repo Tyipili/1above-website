@@ -35,18 +35,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function showPage(page) {
+    console.log('Showing page:', page); // Debug log
+    
     const pages = document.querySelectorAll('.page-container');
     pages.forEach(p => p.classList.remove('active'));
     
-    if (page === 'home') {
-        document.getElementById('homePage').classList.add('active');
-    } else if (page === 'products') {
-        document.getElementById('productsPage').classList.add('active');
+    const pageMap = {
+        'home': 'homePage',
+        'products': 'productsPage',
+        'stockists': 'stockistsPage',
+        'coa': 'coaPage'
+    };
+    
+    const pageId = pageMap[page];
+    if (pageId) {
+        const pageElement = document.getElementById(pageId);
+        if (pageElement) {
+            pageElement.classList.add('active');
+            console.log('Page displayed:', pageId); // Debug log
+        } else {
+            console.error('Page element not found:', pageId); // Debug log
+        }
+    }
+    
+    if (page === 'products') {
         loadProducts();
-    } else if (page === 'stockists') {
-        document.getElementById('stockistsPage').classList.add('active');
-    } else if (page === 'coa') {
-        document.getElementById('coaPage').classList.add('active');
     }
     
     window.scrollTo(0, 0);
