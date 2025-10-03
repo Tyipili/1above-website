@@ -3,123 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Above - Admin Panel</title>
-    <link rel="stylesheet" href="admin-styles.css">
+    <title>1Above - Premium Cannabis Products</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="admin-header">
-        <h1>1Above Admin Panel</h1>
-        <a href="index.html" class="btn-back">Back to Site</a>
+    <!-- Age Verification Gate -->
+    <div class="age-gate" id="ageGate">
+        <div class="age-gate-overlay"></div>
+        <div class="age-gate-content">
+            <div class="age-gate-logo">
+                <img src="logo.png" alt="1Above Logo">
+            </div>
+            <h2>We Need To See Some ID.</h2>
+            <div class="age-gate-buttons">
+                <button class="age-gate-btn under" type="button" id="underBtn">I AM UNDER 19</button>
+                <button class="age-gate-btn" type="button" id="overBtn">I AM 19+</button>
+            </div>
+            <div class="age-gate-footer">© 2024 Motif Labs Inc. All Rights Reserved.</div>
+        </div>
     </div>
 
-    <div class="container">
-        <div id="messageContainer"></div>
-
-        <div class="instructions">
-            <h3>⚠️ Important Instructions</h3>
-            <p>This admin panel works with the browser's local file system. To save changes permanently:</p>
-            <p>1. Click <strong>"Export Products JSON"</strong> after making changes</p>
-            <p>2. Save the downloaded <code>products.json</code> file</p>
-            <p>3. Replace the <code>products.json</code> file on your server with the new one</p>
-            <p>Your changes are stored in the browser until you export and upload the file.</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home'); return false;">
+                <img src="logo.png" alt="1Above Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                <li><a href="#" onclick="showPage('products'); return false;">Products</a></li>
+                <li><a href="#" onclick="showPage('stockists'); return false;">Stockists</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn-find" onclick="showPage('coa'); return false;">Find Your OCS</a>
+                <a href="#" class="btn-subscribe">Subscribe</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="export-section">
-            <h3>Import / Export</h3>
-            <div class="export-buttons">
-                <button class="btn-export" onclick="exportProducts()">📥 Export Products JSON</button>
-                <button class="btn-import" onclick="document.getElementById('importFile').click()">📤 Import Products JSON</button>
-                <input type="file" id="importFile" accept=".json" onchange="importProducts(event)">
+    <!-- Home Page -->
+    <div id="homePage" class="page-container active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Meticulously Made For An Elevated Experience</h1>
+                <p>Premium cannabis products crafted with precision, innovation, and passion. Experience quality like never before.</p>
+            </div>
+        </section>
+
+        <!-- Innovation Section -->
+        <section class="section innovation" id="innovation">
+            <h2>Industry Leading Innovation</h2>
+            <p>We bring you exactly what you want. No more, no less. We create innovative products that focus on flavour, effect, and transparency.</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Advanced Extraction</h3>
+                    <p>State-of-the-art extraction techniques ensure maximum purity and potency in every product.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Rigorously Tested</h3>
+                    <p>Every product undergoes extensive testing to guarantee quality, safety, and consistency.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest ingredients make it into our carefully crafted, artisanal products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about">
+            <h2>About 1Above</h2>
+            <p>We are committed to delivering top-quality, innovative cannabis products with a focus on flavour and potency. Our mission is to provide a cannabis experience like no other through advanced extraction techniques, rigorously tested hardware, and custom formulations. Cut out the excess without sacrificing quality.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions? We'd love to hear from you. Reach out to our team for more information about our products and where to find them.</p>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="productsPage" class="page-container">
+        <div class="products-header">
+            <h1>Our Products</h1>
+            <p>Discover our carefully curated selection of premium cannabis products, each designed to deliver an exceptional experience.</p>
+            
+            <div class="product-categories">
+                <button class="category-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="category-btn" onclick="filterProducts('vapes')">Vapes</button>
+                <button class="category-btn" onclick="filterProducts('edibles')">Edibles</button>
+                <button class="category-btn" onclick="filterProducts('flower')">Flower</button>
+                <button class="category-btn" onclick="filterProducts('concentrates')">Concentrates</button>
             </div>
         </div>
 
-        <div class="actions">
-            <h2>Product Management</h2>
-            <button class="btn-add" onclick="openModal()">+ Add New Product</button>
-        </div>
-
-        <div class="products-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Emoji</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Badge</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="productsTableBody">
-                    <tr>
-                        <td colspan="7" class="loading">Loading products...</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <section class="section">
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
     </div>
 
-    <!-- Product Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Add New Product</h2>
-                <button class="btn-close" onclick="closeModal()">&times;</button>
+    <!-- Stockists Page -->
+    <div id="stockistsPage" class="page-container">
+        <div class="stockists-header">
+            <h1>Find Us In Store</h1>
+            <p>Find 1Above at your local dispensary or shop with some of our partners. Available across Canada.</p>
+        </div>
+
+        <section class="section">
+            <div class="stockists-grid">
+                <div class="stockist-card" onclick="window.open('https://ocs.ca/search?q=1above', '_blank')">
+                    <h3>Ontario</h3>
+                    <p>Shop 1Above products at Ontario Cannabis Store and authorized retailers across the province.</p>
+                    <a href="https://ocs.ca/search?q=1above" target="_blank" class="stockist-btn" onclick="event.stopPropagation()">Shop Now</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- COA Page -->
+    <div id="coaPage" class="page-container">
+        <div class="coa-header">
+            <h1>Certificates of Analysis</h1>
+            <p>Quality you can verify. View lab test results and certificates of analysis for all 1Above products.</p>
+        </div>
+
+        <section class="section">
+            <div class="coa-search">
+                <h3>Search by Lot Number</h3>
+                <div class="search-box">
+                    <input type="text" id="lotSearch" placeholder="Enter lot number (e.g., LOT123456)">
+                    <button class="btn-search" onclick="searchLot()">Search</button>
+                </div>
+                <p class="search-help">Find your lot number on the product packaging</p>
             </div>
 
-            <form id="productForm" onsubmit="saveProduct(event)">
-                <input type="hidden" id="productId">
-                <input type="hidden" id="productIndex">
-
-                <div class="form-group">
-                    <label for="productName">Product Name <span class="required">*</span></label>
-                    <input type="text" id="productName" required>
+            <div class="coa-products">
+                <h2>Browse by Product</h2>
+                
+                <div class="coa-product-card">
+                    <div class="coa-product-info">
+                        <div class="product-image-small">💨</div>
+                        <div>
+                            <h3>Premium Vape Cartridge</h3>
+                            <p class="product-type">1.0G 510 Live Resin Vape</p>
+                        </div>
+                    </div>
+                    <div class="coa-variants">
+                        <div class="coa-variant">
+                            <span>Super Lemon Haze</span>
+                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
+                        </div>
+                        <div class="coa-variant">
+                            <span>Blueberry Kush</span>
+                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="productDescription">Description <span class="required">*</span></label>
-                    <textarea id="productDescription" required></textarea>
-                    <p class="form-help">Provide a detailed description of the product</p>
+                <div class="coa-product-card">
+                    <div class="coa-product-info">
+                        <div class="product-image-small">🖊️</div>
+                        <div>
+                            <h3>Disposable Vape</h3>
+                            <p class="product-type">1.0G All-In-One Vape</p>
+                        </div>
+                    </div>
+                    <div class="coa-variants">
+                        <div class="coa-variant">
+                            <span>Miracle Alien</span>
+                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
+                        </div>
+                        <div class="coa-variant">
+                            <span>Sour ZKZ</span>
+                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="productPrice">Price <span class="required">*</span></label>
-                    <input type="text" id="productPrice" placeholder="$45.99" required>
-                    <p class="form-help">Include the $ symbol (e.g., $45.99)</p>
+                <div class="coa-product-card">
+                    <div class="coa-product-info">
+                        <div class="product-image-small">💎</div>
+                        <div>
+                            <h3>Live Resin</h3>
+                            <p class="product-type">Premium Concentrate</p>
+                        </div>
+                    </div>
+                    <div class="coa-variants">
+                        <div class="coa-variant">
+                            <span>Full Spectrum</span>
+                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="productEmoji">Emoji <span class="required">*</span></label>
-                    <input type="text" id="productEmoji" placeholder="💨" required maxlength="4">
-                    <p class="form-help">Single emoji to represent the product</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="productCategory">Category <span class="required">*</span></label>
-                    <select id="productCategory" required>
-                        <option value="">Select a category</option>
-                        <option value="vapes">Vapes</option>
-                        <option value="edibles">Edibles</option>
-                        <option value="flower">Flower</option>
-                        <option value="concentrates">Concentrates</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="productBadge">Badge (Optional)</label>
-                    <input type="text" id="productBadge" placeholder="Best Seller, New, Premium">
-                    <p class="form-help">Leave empty for no badge</p>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="btn-submit">Save Product</button>
-                </div>
-            </form>
-        </div>
+            <div class="coa-help">
+                <h3>Can't Find Your COA?</h3>
+                <p>If you can't find your lot number in the search or listings, it might be from an older batch that's been archived or a new one that's not in our system yet. Drop us a message and we'll hook you up.</p>
+                <button class="btn-contact" onclick="showPage('home'); return false;">Contact Us</button>
+            </div>
+        </section>
     </div>
 
-    <script src="admin-script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="1Above Logo">
+                </div>
+                <p style="color: #999; line-height: 1.7;">Premium cannabis products crafted with precision and passion for an elevated experience.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('products'); return false;">Vapes</a></li>
+                    <li><a href="#" onclick="showPage('products'); return false;">Concentrates</a></li>
+                    <li><a href="#" onclick="showPage('products'); return false;">Edibles</a></li>
+                    <li><a href="#" onclick="showPage('products'); return false;">Flower</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('home'); return false;">About Us</a></li>
+                    <li><a href="#" onclick="showPage('home'); return false;">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#" onclick="showPage('stockists'); return false;">Store Locator</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 1Above. All rights reserved. | Must be 19+ to purchase cannabis products.</p>
+        </div>
+    </footer>
+
+    <!-- Admin Link -->
+    <a href="admin.html" class="admin-link">Admin Panel</a>
+
+    <script src="script.js"></script>
 </body>
 </html>
