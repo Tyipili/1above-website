@@ -45,6 +45,8 @@ function showPage(page) {
         loadProducts();
     } else if (page === 'stockists') {
         document.getElementById('stockistsPage').classList.add('active');
+    } else if (page === 'coa') {
+        document.getElementById('coaPage').classList.add('active');
     }
     
     window.scrollTo(0, 0);
@@ -60,6 +62,18 @@ function filterProducts(category) {
     event.target.classList.add('active');
     
     loadProducts();
+}
+
+function searchLot() {
+    const lotNumber = document.getElementById('lotSearch').value.trim();
+    
+    if (!lotNumber) {
+        alert('Please enter a lot number');
+        return;
+    }
+    
+    // Simulate search - in production this would query a database
+    alert(`Searching for lot number: ${lotNumber}\n\nThis would display the COA document for this lot number.`);
 }
 
 async function loadProducts() {
