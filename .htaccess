@@ -1,6 +1,6 @@
 <Files "admin.html">
 AuthType Basic
 AuthName "Admin Access"
-AuthUserFile /path/to/.htpasswd
+AuthUserFile .htpasswd
 Require valid-user
 </Files>
