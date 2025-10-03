@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Above - Premium Cannabis Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Age Verification Gate -->
+    <div class="age-gate" id="ageGate">
+        <div class="age-gate-overlay"></div>
+        <div class="age-gate-content">
+            <div class="age-gate-logo">
+                <img src="logo.png" alt="1Above Logo">
+            </div>
+            <h2>We Need To See Some ID.</h2>
+            <div class="age-gate-buttons">
+                <button class="age-gate-btn under" type="button" id="underBtn">I AM UNDER 19</button>
+                <button class="age-gate-btn" type="button" id="overBtn">I AM 19+</button>
+            </div>
+            <div class="age-gate-footer">© 2024 Motif Labs Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <img src="logo.png" alt="1Above Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('products')">Products</a></li>
+                <li><a href="#" onclick="showPage('stockists')">Stockists</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn-find" onclick="showPage('stockists'); return false;">Find Your OCS</a>
+                <a href="#" class="btn-subscribe">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page-container active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Meticulously Made For An Elevated Experience</h1>
+                <p>Premium cannabis products crafted with precision, innovation, and passion. Experience quality like never before.</p>
+            </div>
+        </section>
+
+        <!-- Innovation Section -->
+        <section class="section innovation" id="innovation">
+            <h2>Industry Leading Innovation</h2>
+            <p>We bring you exactly what you want. No more, no less. We create innovative products that focus on flavour, effect, and transparency.</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Advanced Extraction</h3>
+                    <p>State-of-the-art extraction techniques ensure maximum purity and potency in every product.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Rigorously Tested</h3>
+                    <p>Every product undergoes extensive testing to guarantee quality, safety, and consistency.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest ingredients make it into our carefully crafted, artisanal products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about">
+            <h2>About 1Above</h2>
+            <p>We are committed to delivering top-quality, innovative cannabis products with a focus on flavour and potency. Our mission is to provide a cannabis experience like no other through advanced extraction techniques, rigorously tested hardware, and custom formulations. Cut out the excess without sacrificing quality.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions? We'd love to hear from you. Reach out to our team for more information about our products and where to find them.</p>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="productsPage" class="page-container">
+        <div class="products-header">
+            <h1>Our Products</h1>
+            <p>Discover our carefully curated selection of premium cannabis products, each designed to deliver an exceptional experience.</p>
+            
+            <div class="product-categories">
+                <button class="category-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="category-btn" onclick="filterProducts('vapes')">Vapes</button>
+                <button class="category-btn" onclick="filterProducts('edibles')">Edibles</button>
+                <button class="category-btn" onclick="filterProducts('flower')">Flower</button>
+                <button class="category-btn" onclick="filterProducts('concentrates')">Concentrates</button>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Stockists Page -->
+    <div id="stockistsPage" class="page-container">
+        <div class="stockists-header">
+            <h1>Find Us In Store</h1>
+            <p>Find 1Above at your local dispensary or shop with some of our partners. Available across Canada.</p>
+        </div>
+
+        <section class="section">
+            <div class="stockists-grid">
+                <div class="stockist-card" onclick="window.open('https://ocs.ca/search?q=1above', '_blank')">
+                    <h3>Ontario</h3>
+                    <p>Shop 1Above products at Ontario Cannabis Store and authorized retailers across the province.</p>
+                    <a href="https://ocs.ca/search?q=1above" target="_blank" class="stockist-btn" onclick="event.stopPropagation()">Shop Now</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="1Above Logo">
+                </div>
+                <p style="color: #999; line-height: 1.7;">Premium cannabis products crafted with precision and passion for an elevated experience.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#">Vapes</a></li>
+                    <li><a href="#">Concentrates</a></li>
+                    <li><a href="#">Edibles</a></li>
+                    <li><a href="#">Flower</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Store Locator</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 1Above. All rights reserved. | Must be 19+ to purchase cannabis products.</p>
+        </div>
+    </footer>
+
+    <!-- Admin Link -->
+    <a href="#" class="admin-link" onclick="alert('To edit products, open products.json in a text editor'); return false;">Edit Products</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
