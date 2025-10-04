@@ -3,7 +3,6 @@ let currentFilter = 'all';
 function verifyAge() {
     document.getElementById('ageGate').classList.add('hidden');
     localStorage.setItem('ageVerified', 'true');
-    // Remove loadProducts() from here
 }
 
 function underAge() {
@@ -13,7 +12,6 @@ function underAge() {
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('ageVerified') === 'true') {
         document.getElementById('ageGate').classList.add('hidden');
-        // Remove loadProducts() from here
     }
     
     const overBtn = document.getElementById('overBtn');
@@ -54,21 +52,8 @@ function showPage(page) {
         }
     }
     
-    // Remove the products check since you don't have a products page
-    
     window.scrollTo(0, 0);
     return false;
-}
-
-function filterProducts(category) {
-    currentFilter = category;
-    
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    event.target.classList.add('active');
-    
-    loadProducts();
 }
 
 function searchLot() {
@@ -79,60 +64,5 @@ function searchLot() {
         return;
     }
     
-    // Simulate search - in production this would query a database
     alert(`Searching for lot number: ${lotNumber}\n\nThis would display the COA document for this lot number.`);
-}
-
-async function loadProducts() {
-    const productGrid = document.getElementById('productGrid');
-    
-    // Add a check to prevent errors if productGrid doesn't exist
-    if (!productGrid) {
-        return;
-    }
-    
-    productGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 60px; color: #999;">Loading products...</p>';
-
-    try {
-        const response = await fetch('products.json');
-        if (!response.ok) throw new Error('Failed to load products.json');
-        
-        const allProducts = await response.json();
-
-        // Filter products
-        const products = currentFilter === 'all' 
-            ? allProducts 
-            : allProducts.filter(p => p.category === currentFilter);
-
-        productGrid.innerHTML = '';
-
-        if (products.length === 0) {
-            productGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 60px; color: #999;">No products found in this category.</p>';
-            return;
-        }
-
-        products.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'product-card';
-            productCard.innerHTML = `
-                <div class="product-image">
-                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                    <span style="font-size: 80px;">${product.emoji}</span>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">${product.category || 'General'}</div>
-                    <h3>${product.name}</h3>
-                    <p>${product.description}</p>
-                    <div class="product-meta">
-                        <div class="price">${product.price}</div>
-                        <button class="btn-view-product">View Details</button>
-                    </div>
-                </div>
-            `;
-            productGrid.appendChild(productCard);
-        });
-    } catch (error) {
-        console.error('Error loading products:', error);
-        productGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 60px; color: #d32f2f;">Failed to load products. Please make sure products.json file exists in the same folder as index.html</p>';
-    }
 }
