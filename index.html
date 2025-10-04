@@ -88,106 +88,200 @@
     </div>
 
     <!-- Hash Hole Product Page -->
-    <div id="hashholePage" class="page-container">
-        <div class="product-hero">
-            <div class="product-hero-content">
-                <div class="product-hero-text">
-                    <h1>Hash Hole Infused Pre-Roll</h1>
-                    <p class="product-subtitle">Cap Junky Strain</p>
-                    <p class="product-tagline">Hand rolled joints with flower, hash rosin and a wooden mouthpiece, creating a perfect burn with a donut effect.</p>
-                    <a href="https://ocs.ca/products/hash-hole-infused-pre-roll-1above-cap-junky" target="_blank" class="btn-buy-now">Buy Now at OCS</a>
-                </div>
-            </div>
-        </div>
+    <!-- Replace the hashholePage div in your index.html with this: -->
 
-        <section class="section product-details">
-            <div class="details-grid">
-                <div class="detail-card">
-                    <div class="detail-icon">💪</div>
-                    <h3>Potency</h3>
-                    <p class="detail-value">Very Strong</p>
-                    <p class="detail-spec">34% - 42% THC</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🌿</div>
-                    <h3>Plant Type</h3>
-                    <p class="detail-value">Hybrid</p>
-                    <p class="detail-spec">Cap Junky Strain</p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🏠</div>
-                    <h3>Grow Method</h3>
-                    <p class="detail-value">Indoor</p>
-                    <p class="detail-spec">Ontario Grown</p>
-                </div>
+<div id="hashholePage" class="page-container">
+    <div class="ocs-product-page">
+        <div class="ocs-container">
+            <!-- Breadcrumb -->
+            <div class="ocs-breadcrumb">
+                <a href="#" onclick="showPage('home'); return false;">1ABOVE</a>
             </div>
-        </section>
 
-        <section class="section product-info-section">
-            <div class="info-container">
-                <div class="info-left">
-                    <h2>About Hash Hole</h2>
-                    <p>Hash Holes are meticulously hand-rolled joints combining premium flower with hash rosin and finished with a wooden mouthpiece. This unique construction creates a perfect burn with a distinctive donut effect that delivers an unparalleled smoking experience.</p>
-                    
-                    <h3>Key Features</h3>
-                    <ul class="features-list">
-                        <li>Hand-rolled with premium Cap Junky strain</li>
-                        <li>Infused with hash rosin for enhanced potency</li>
-                        <li>Wooden mouthpiece for smooth draws</li>
-                        <li>Creates signature donut burn effect</li>
-                        <li>Indoor grown in Ontario</li>
-                        <li>Hand trimmed for quality</li>
-                    </ul>
+            <!-- Product Title -->
+            <h1 class="ocs-product-title">Hash Hole Infused Pre-roll</h1>
+
+            <div class="ocs-product-layout">
+                <!-- Left Side - Product Image -->
+                <div class="ocs-product-gallery">
+                    <div class="ocs-main-image">
+                        <!-- Product image placeholder - replace with actual image -->
+                        <img src="https://via.placeholder.com/500x600/1C352D/C8A951?text=Hash+Hole+Product+Image" alt="Hash Hole Infused Pre-roll">
+                    </div>
+                    <div class="ocs-image-dots">
+                        <span class="ocs-dot active"></span>
+                        <span class="ocs-dot"></span>
+                        <span class="ocs-dot"></span>
+                    </div>
                 </div>
-                <div class="info-right">
-                    <div class="specs-card">
-                        <h3>Product Specifications</h3>
-                        <div class="spec-row">
-                            <span class="spec-label">THC Content:</span>
-                            <span class="spec-value">34% - 42%</span>
+
+                <!-- Right Side - Product Info -->
+                <div class="ocs-product-info">
+                    <!-- THC Gauge -->
+                    <div class="ocs-gauge-container">
+                        <div class="ocs-gauge">
+                            <div class="ocs-gauge-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#C8A951" stroke-width="8" 
+                                            stroke-dasharray="283" stroke-dashoffset="70" 
+                                            transform="rotate(-90 50 50)"/>
+                                </svg>
+                                <div class="ocs-gauge-label">
+                                    <span class="ocs-gauge-type">THC</span>
+                                </div>
+                            </div>
+                            <div class="ocs-info-icon">?</div>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">CBD Content:</span>
-                            <span class="spec-value">0% - 6%</span>
+                        <div class="ocs-gauge-values">
+                            <div class="ocs-gauge-percent">34.00 - 42.00%</div>
+                            <div class="ocs-gauge-mg">340.00 - 420.00 mg/g</div>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Strain:</span>
-                            <span class="spec-value">Cap Junky</span>
+                    </div>
+
+                    <!-- CBD Gauge -->
+                    <div class="ocs-gauge-container">
+                        <div class="ocs-gauge">
+                            <div class="ocs-gauge-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#4FC3F7" stroke-width="8" 
+                                            stroke-dasharray="283" stroke-dashoffset="265" 
+                                            transform="rotate(-90 50 50)"/>
+                                </svg>
+                                <div class="ocs-gauge-label">
+                                    <span class="ocs-gauge-type">CBD</span>
+                                </div>
+                            </div>
+                            <div class="ocs-info-icon">?</div>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Hybrid</span>
+                        <div class="ocs-gauge-values">
+                            <div class="ocs-gauge-percent">0.00 - 6.00%</div>
+                            <div class="ocs-gauge-mg">0.00 - 60.00 mg/g</div>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Terpenes:</span>
-                            <span class="spec-value">Beta-Caryophyllene, Humulene, Limonene, Linalool, Myrcene</span>
+                    </div>
+
+                    <!-- Plant Type -->
+                    <div class="ocs-plant-type">
+                        <div class="ocs-plant-label">
+                            <span>PLANT TYPE</span>
+                            <span class="ocs-info-icon">?</span>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Growing Province:</span>
-                            <span class="spec-value">Ontario</span>
+                        <div class="ocs-plant-value">Hybrid</div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="ocs-size-section">
+                        <div class="ocs-size-label">SIZE</div>
+                        <div class="ocs-size-options">
+                            <button class="ocs-size-btn active">1x2g</button>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Grow Method:</span>
-                            <span class="spec-value">Indoor</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Trimming:</span>
-                            <span class="spec-value">Hand Trimmed</span>
-                        </div>
+                    </div>
+
+                    <!-- Check Local Store Button -->
+                    <button class="ocs-store-btn">CHECK LOCAL STORE</button>
+
+                    <!-- Availability Notice -->
+                    <div class="ocs-availability">
+                        <span class="ocs-store-icon">🏪</span>
+                        This item is only available in-store. Please contact your 
+                        <a href="#" onclick="showPage('stockists'); return false;">local retailer</a> 
+                        as price and availability may vary.
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="ocs-description">
+                        <p>Hash Holes are hand rolled joints with flower, hash rosin and a wooden mouthpiece, all creating a perfect burn with a donut effect.</p>
+                        <a href="https://ocs.ca/products/hash-hole-infused-pre-roll-1above-cap-junky" target="_blank" class="ocs-learn-more">
+                            LEARN MORE <span>›</span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="section cta-section">
-            <h2>Ready to Experience Hash Hole?</h2>
-            <p>Available now at Ontario Cannabis Store and authorized retailers.</p>
-            <div class="cta-buttons">
-                <a href="https://ocs.ca/products/hash-hole-infused-pre-roll-1above-cap-junky" target="_blank" class="btn-primary">Shop at OCS</a>
-                <a href="#" onclick="showPage('stockists'); return false;" class="btn-secondary">Find a Retailer</a>
+            <!-- Product Details Section -->
+            <div class="ocs-details-section">
+                <h2>About This Product</h2>
+                <table class="ocs-details-table">
+                    <tr>
+                        <td class="ocs-detail-label">Licensed Producer</td>
+                        <td class="ocs-detail-value">2380996 Ontario Inc. o/a Blue Harbour Organics</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Brand</td>
+                        <td class="ocs-detail-value">1Above</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Potency</td>
+                        <td class="ocs-detail-value">Very Strong</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">THC</td>
+                        <td class="ocs-detail-value">34.00 - 42.00% | 340.00 - 420.00 mg/g</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">CBD</td>
+                        <td class="ocs-detail-value">0.00 - 6.00% | 0.00 - 60.00 mg/g</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Plant Type</td>
+                        <td class="ocs-detail-value">Hybrid</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Strain Name</td>
+                        <td class="ocs-detail-value">Cap Junky</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Terpenes</td>
+                        <td class="ocs-detail-value">Beta-Caryophyllene, Humulene, Limonene, Linalool, Myrcene</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Growing Province</td>
+                        <td class="ocs-detail-value">Ontario</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Grow method</td>
+                        <td class="ocs-detail-value">Indoor</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Grow medium</td>
+                        <td class="ocs-detail-value">Cocoa Fibre</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Grow room lighting</td>
+                        <td class="ocs-detail-value">HPS and LED</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Drying method</td>
+                        <td class="ocs-detail-value">Hang Dry</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">Trimming method</td>
+                        <td class="ocs-detail-value">Hand Trimmed</td>
+                    </tr>
+                </table>
             </div>
-        </section>
+
+            <!-- Ingredients Section -->
+            <div class="ocs-ingredients-section">
+                <h3>Nutrition Table & Ingredient List</h3>
+                <div class="ocs-ingredients">
+                    <strong>Ingredients:</strong> Dried Cannabis, Rosin
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="ocs-cta-section">
+                <h2>Ready to Experience Hash Hole?</h2>
+                <p>Available now at Ontario Cannabis Store and authorized retailers.</p>
+                <div class="ocs-cta-buttons">
+                    <a href="https://ocs.ca/products/hash-hole-infused-pre-roll-1above-cap-junky" target="_blank" class="btn-primary">Shop at OCS</a>
+                    <a href="#" onclick="showPage('stockists'); return false;" class="btn-secondary">Find a Retailer</a>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
     <!-- Stockists Page -->
     <div id="stockistsPage" class="page-container">
