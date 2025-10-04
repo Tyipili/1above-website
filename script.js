@@ -66,6 +66,7 @@ function searchLot() {
     
     alert(`Searching for lot number: ${lotNumber}\n\nThis would display the COA document for this lot number.`);
 }
+
 function changeProductImage(imageSrc, thumbnailElement) {
     // Update main image
     const mainImage = document.getElementById('mainProductImage');
