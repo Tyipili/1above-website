@@ -88,7 +88,7 @@
     </div>
 
     <!-- Hash Hole Product Page -->
-    <!-- Replace the hashholePage div in your index.html with this: -->
+<!-- Replace the hashholePage div in your index.html with this: -->
 
 <div id="hashholePage" class="page-container">
     <div class="ocs-product-page">
@@ -105,13 +105,12 @@
                 <!-- Left Side - Product Image -->
                 <div class="ocs-product-gallery">
                     <div class="ocs-main-image">
-                        <!-- Product image placeholder - replace with actual image -->
-                        <img src="https://via.placeholder.com/500x600/1C352D/C8A951?text=Hash+Hole+Product+Image" alt="Hash Hole Infused Pre-roll">
+                        <img id="mainProductImage" src="hashhole-joint.jpg" alt="Hash Hole Infused Pre-roll">
                     </div>
-                    <div class="ocs-image-dots">
-                        <span class="ocs-dot active"></span>
-                        <span class="ocs-dot"></span>
-                        <span class="ocs-dot"></span>
+                    <div class="ocs-image-thumbnails">
+                        <img src="hashhole-joint.jpg" alt="Hash Hole Joint" class="ocs-thumbnail active" onclick="changeProductImage('hashhole-joint.jpg', this)">
+                        <img src="hashhole-tube.jpg" alt="Hash Hole Tube" class="ocs-thumbnail" onclick="changeProductImage('hashhole-tube.jpg', this)">
+                        <img src="hashhole-packaging.jpg" alt="Hash Hole Packaging" class="ocs-thumbnail" onclick="changeProductImage('hashhole-packaging.jpg', this)">
                     </div>
                 </div>
 
@@ -282,7 +281,6 @@
         </div>
     </div>
 </div>
-
     <!-- Stockists Page -->
     <div id="stockistsPage" class="page-container">
         <div class="stockists-header">
