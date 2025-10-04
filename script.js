@@ -66,3 +66,18 @@ function searchLot() {
     
     alert(`Searching for lot number: ${lotNumber}\n\nThis would display the COA document for this lot number.`);
 }
+function changeProductImage(imageSrc, thumbnailElement) {
+    // Update main image
+    const mainImage = document.getElementById('mainProductImage');
+    if (mainImage) {
+        mainImage.src = imageSrc;
+    }
+    
+    // Update active thumbnail
+    const thumbnails = document.querySelectorAll('.ocs-thumbnail');
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    
+    if (thumbnailElement) {
+        thumbnailElement.classList.add('active');
+    }
+}
