@@ -1396,8 +1396,14 @@ footer {
     color: #C8A951;
 }
 
-.ocs-learn-more span {
+.ocs-learn-more #learnMoreArrow {
     font-size: 18px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.ocs-learn-more.expanded #learnMoreArrow {
+    transform: rotate(90deg);
 }
 
 /* Details Section */
@@ -1406,18 +1412,67 @@ footer {
     border: 1px solid #e0e0e0;
     padding: 40px;
     margin-bottom: 40px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.ocs-details-section.expanding {
+    animation: slideDown 0.4s ease-in-out;
+}
+
+.ocs-details-section.collapsing {
+    animation: slideUp 0.4s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 2000px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        max-height: 2000px;
+    }
+    to {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 .ocs-details-section h2 {
     font-size: 24px;
     color: #1C352D;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.ocs-about-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
     text-align: left;
 }
 
 .ocs-details-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 30px;
 }
 
 .ocs-details-table tr {
@@ -1590,4 +1645,3 @@ footer {
         padding: 40px 20px;
     }
 }
-
