@@ -82,3 +82,40 @@ function changeProductImage(imageSrc, thumbnailElement) {
         thumbnailElement.classList.add('active');
     }
 }
+
+function toggleProductDetails() {
+    const detailsSection = document.getElementById('productDetailsSection');
+    const learnMoreLink = document.querySelector('.ocs-learn-more');
+    const learnMoreText = document.getElementById('learnMoreText');
+    
+    if (!detailsSection) return;
+    
+    if (detailsSection.style.display === 'none') {
+        // Show the section
+        detailsSection.style.display = 'block';
+        detailsSection.classList.add('expanding');
+        learnMoreLink.classList.add('expanded');
+        learnMoreText.textContent = 'SHOW LESS';
+        
+        // Smooth scroll to the details section
+        setTimeout(() => {
+            detailsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+        
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            detailsSection.classList.remove('expanding');
+        }, 400);
+    } else {
+        // Hide the section
+        detailsSection.classList.add('collapsing');
+        learnMoreLink.classList.remove('expanded');
+        learnMoreText.textContent = 'LEARN MORE';
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            detailsSection.style.display = 'none';
+            detailsSection.classList.remove('collapsing');
+        }, 400);
+    }
+}
