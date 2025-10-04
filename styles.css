@@ -1091,3 +1091,496 @@ footer {
         transform: scale(0.98);
     }
 }
+
+/* OCS-Style Product Page */
+.ocs-product-page {
+    background: #FAFAFA;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.ocs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.ocs-breadcrumb {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.ocs-breadcrumb a {
+    color: #333;
+    text-decoration: none;
+}
+
+.ocs-breadcrumb a:hover {
+    color: #C8A951;
+}
+
+.ocs-product-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: #1C352D;
+    margin-bottom: 40px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.ocs-product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Product Gallery */
+.ocs-product-gallery {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+}
+
+.ocs-main-image {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.ocs-main-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.ocs-image-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ocs-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d0d0d0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ocs-dot.active {
+    background: #333;
+}
+
+/* Product Info */
+.ocs-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ocs-gauge-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ocs-gauge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ocs-gauge-circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.ocs-gauge-circle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ocs-gauge-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.ocs-gauge-type {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.ocs-info-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #999;
+    cursor: help;
+    flex-shrink: 0;
+}
+
+.ocs-gauge-values {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ocs-gauge-percent {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.ocs-gauge-mg {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Plant Type */
+.ocs-plant-type {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ocs-plant-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.ocs-plant-value {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Size Section */
+.ocs-size-section {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ocs-size-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.ocs-size-options {
+    display: flex;
+    gap: 10px;
+}
+
+.ocs-size-btn {
+    padding: 12px 30px;
+    background: white;
+    border: 2px solid #d0d0d0;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ocs-size-btn.active {
+    border-color: #333;
+    background: #f5f5f5;
+}
+
+.ocs-size-btn:hover {
+    border-color: #333;
+}
+
+/* Store Button */
+.ocs-store-btn {
+    width: 100%;
+    padding: 18px 30px;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ocs-store-btn:hover {
+    background: #1C352D;
+}
+
+/* Availability */
+.ocs-availability {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.ocs-store-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.ocs-availability a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.ocs-availability a:hover {
+    color: #C8A951;
+}
+
+/* Description */
+.ocs-description {
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.ocs-description p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.ocs-learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.ocs-learn-more:hover {
+    color: #C8A951;
+}
+
+.ocs-learn-more span {
+    font-size: 18px;
+}
+
+/* Details Section */
+.ocs-details-section {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.ocs-details-section h2 {
+    font-size: 24px;
+    color: #1C352D;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.ocs-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ocs-details-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ocs-details-table tr:last-child {
+    border-bottom: none;
+}
+
+.ocs-details-table td {
+    padding: 15px 0;
+    vertical-align: top;
+}
+
+.ocs-detail-label {
+    font-weight: 600;
+    color: #333;
+    width: 200px;
+    font-size: 14px;
+}
+
+.ocs-detail-value {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Ingredients Section */
+.ocs-ingredients-section {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.ocs-ingredients-section h3 {
+    font-size: 20px;
+    color: #1C352D;
+    margin-bottom: 20px;
+}
+
+.ocs-ingredients {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.ocs-ingredients strong {
+    color: #333;
+}
+
+/* CTA Section */
+.ocs-cta-section {
+    background: linear-gradient(135deg, #1C352D 0%, #2A4D42 100%);
+    color: #FAFAFA;
+    text-align: center;
+    padding: 60px 40px;
+    margin-top: 60px;
+}
+
+.ocs-cta-section h2 {
+    color: #C8A951;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.ocs-cta-section p {
+    color: rgba(250, 250, 250, 0.9);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.ocs-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #C8A951;
+    color: #1C352D;
+}
+
+.btn-primary:hover {
+    background: #B39641;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #C8A951;
+    border: 2px solid #C8A951;
+}
+
+.btn-secondary:hover {
+    background: rgba(200, 169, 81, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+    .ocs-product-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .ocs-product-gallery {
+        position: static;
+    }
+
+    .ocs-main-image {
+        min-height: 400px;
+    }
+
+    .ocs-details-section,
+    .ocs-ingredients-section {
+        padding: 30px 20px;
+    }
+
+    .ocs-detail-label {
+        width: 150px;
+        font-size: 13px;
+    }
+
+    .ocs-detail-value {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ocs-container {
+        padding: 20px 15px;
+    }
+
+    .ocs-gauge-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ocs-details-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .ocs-detail-label {
+        width: 100%;
+        padding-bottom: 5px;
+    }
+
+    .ocs-detail-value {
+        padding-bottom: 15px;
+    }
+
+    .ocs-main-image {
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .ocs-cta-section {
+        padding: 40px 20px;
+    }
+}
+
