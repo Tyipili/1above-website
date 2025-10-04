@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function showPage(page) {
-    console.log('Showing page:', page); // Debug log
-    
     const pages = document.querySelectorAll('.page-container');
     pages.forEach(p => p.classList.remove('active'));
     
@@ -52,9 +50,6 @@ function showPage(page) {
         const pageElement = document.getElementById(pageId);
         if (pageElement) {
             pageElement.classList.add('active');
-            console.log('Page displayed:', pageId); // Debug log
-        } else {
-            console.error('Page element not found:', pageId); // Debug log
         }
     }
     
