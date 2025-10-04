@@ -1161,24 +1161,31 @@ footer {
     object-fit: contain;
 }
 
-.ocs-image-dots {
+.ocs-image-thumbnails {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
 }
 
-.ocs-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #d0d0d0;
+.ocs-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
     cursor: pointer;
     transition: all 0.3s;
+    background: white;
+    padding: 5px;
 }
 
-.ocs-dot.active {
-    background: #333;
+.ocs-thumbnail:hover {
+    border-color: #C8A951;
+}
+
+.ocs-thumbnail.active {
+    border-color: #333;
+    border-width: 3px;
 }
 
 /* Product Info */
