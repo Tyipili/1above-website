@@ -3,7 +3,7 @@ let currentFilter = 'all';
 function verifyAge() {
     document.getElementById('ageGate').classList.add('hidden');
     localStorage.setItem('ageVerified', 'true');
-    loadProducts();
+    // Remove loadProducts() from here
 }
 
 function underAge() {
@@ -13,7 +13,7 @@ function underAge() {
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('ageVerified') === 'true') {
         document.getElementById('ageGate').classList.add('hidden');
-        loadProducts();
+        // Remove loadProducts() from here
     }
     
     const overBtn = document.getElementById('overBtn');
@@ -54,9 +54,7 @@ function showPage(page) {
         }
     }
     
-    if (page === 'products') {
-        loadProducts();
-    }
+    // Remove the products check since you don't have a products page
     
     window.scrollTo(0, 0);
     return false;
@@ -87,6 +85,12 @@ function searchLot() {
 
 async function loadProducts() {
     const productGrid = document.getElementById('productGrid');
+    
+    // Add a check to prevent errors if productGrid doesn't exist
+    if (!productGrid) {
+        return;
+    }
+    
     productGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 60px; color: #999;">Loading products...</p>';
 
     try {
