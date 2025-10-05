@@ -1,6 +1,0 @@
-<Files "admin.html">
-AuthType Basic
-AuthName "Admin Access"
-AuthUserFile https://tyipili.github.io/1above-website/.htpasswd
-Require valid-user
-</Files>
