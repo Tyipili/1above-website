@@ -1735,3 +1735,60 @@ footer {
     }
 }
 
+/* ==================== MOBILE MENU - MUST BE LAST ====================*/
+@media (max-width: 768px) {
+    nav .nav-container .hamburger {
+        display: flex !important;
+        order: 3;
+    }
+
+    nav .nav-container .logo {
+        order: 1;
+    }
+
+    nav .nav-container .nav-links {
+        position: fixed !important;
+        top: 80px !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: auto !important;
+        background: #FAFAFA !important;
+        flex-direction: column !important;
+        display: flex !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+        transition: left 0.3s ease-in-out !important;
+        z-index: 9999 !important;
+        list-style: none !important;
+        order: 4;
+    }
+
+    nav .nav-container .nav-links.active {
+        left: 0 !important;
+    }
+
+    nav .nav-container .nav-links li {
+        display: block !important;
+        width: 100% !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+        margin: 0 !important;
+    }
+
+    nav .nav-container .nav-links li:last-child {
+        border-bottom: none !important;
+    }
+
+    nav .nav-container .nav-links a {
+        display: block !important;
+        padding: 18px 20px !important;
+        color: #333 !important;
+        font-size: 16px !important;
+        width: 100% !important;
+    }
+
+    nav .nav-container .nav-actions {
+        display: none !important;
+        order: 2;
+    }
+}
