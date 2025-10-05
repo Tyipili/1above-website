@@ -133,3 +133,49 @@ function closeMobileMenu() {
         hamburger.classList.remove('active');
     }
 }
+
+function changeJuicebarImage(imageSrc, thumbnailElement) {
+    const mainImage = document.getElementById('mainJuicebarImage');
+    if (mainImage) {
+        mainImage.src = imageSrc;
+    }
+    
+    const thumbnails = document.querySelectorAll('#juicebarPage .ocs-thumbnail');
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    
+    if (thumbnailElement) {
+        thumbnailElement.classList.add('active');
+    }
+}
+
+function toggleJuicebarDetails() {
+    const detailsSection = document.getElementById('juicebarDetailsSection');
+    const learnMoreLink = document.querySelector('#juicebarPage .ocs-learn-more');
+    const learnMoreText = document.getElementById('learnMoreJuicebarText');
+    
+    if (!detailsSection) return;
+    
+    if (detailsSection.style.display === 'none') {
+        detailsSection.style.display = 'block';
+        detailsSection.classList.add('expanding');
+        learnMoreLink.classList.add('expanded');
+        learnMoreText.textContent = 'SHOW LESS';
+        
+        setTimeout(() => {
+            detailsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+        
+        setTimeout(() => {
+            detailsSection.classList.remove('expanding');
+        }, 400);
+    } else {
+        detailsSection.classList.add('collapsing');
+        learnMoreLink.classList.remove('expanded');
+        learnMoreText.textContent = 'LEARN MORE';
+        
+        setTimeout(() => {
+            detailsSection.style.display = 'none';
+            detailsSection.classList.remove('collapsing');
+        }, 400);
+    }
+}
