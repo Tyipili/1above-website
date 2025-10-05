@@ -39,9 +39,9 @@
         
         <ul class="nav-links" id="navLinks">
             <li><a href="#" onclick="showPage('home'); closeMobileMenu(); return false;">Home</a></li>
-            <li><a href="#" onclick="showPage('hashhole'); closeMobileMenu(); return false;">Hash Hole</a></li>
             <li><a href="#" onclick="showPage('juicebar'); closeMobileMenu(); return false;">Juice Bar</a></li>
             <li><a href="#" onclick="showPage('liverosin'); closeMobileMenu(); return false;">Live Rosin</a></li>
+            <li><a href="#" onclick="showPage('hashhole'); closeMobileMenu(); return false;">Hash Hole</a></li>
             <li><a href="#" onclick="showPage('stockists'); closeMobileMenu(); return false;">Find Us</a></li>
         </ul>
         <div class="nav-actions">
@@ -60,28 +60,40 @@
             </div>
         </section>
 
-        <!-- Innovation Section -->
-        <section class="section innovation" id="innovation">
-            <h2>Industry Leading Innovation</h2>
-            <p>We bring you exactly what you want. No more, no less. We create innovative products that focus on flavour, effect, and transparency.</p>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🔬</div>
-                    <h3>Advanced Extraction</h3>
-                    <p>State-of-the-art extraction techniques ensure maximum purity and potency in every product.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">✓</div>
-                    <h3>Rigorously Tested</h3>
-                    <p>Every product undergoes extensive testing to guarantee quality, safety, and consistency.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🌿</div>
-                    <h3>Premium Quality</h3>
-                    <p>Only the finest ingredients make it into our carefully crafted, artisanal products.</p>
-                </div>
+<!-- Innovation Section -->
+<section class="section innovation" id="innovation">
+    <h2>Industry Leading Innovation</h2>
+    <p>We bring you exactly what you want. No more, no less. We create innovative products that focus on flavour, effect, and transparency.</p>
+    
+    <div class="product-showcase">
+        <!-- Vapes -->
+        <div class="showcase-card">
+            <div class="showcase-image">
+                <img src="juicebar-device.jpg" alt="Juice Bar Vapes">
             </div>
-        </section>
+            <h3>VAPES</h3>
+            <button class="btn-explore" onclick="showPage('juicebar'); return false;">EXPLORE</button>
+        </div>
+
+        <!-- Concentrates -->
+        <div class="showcase-card">
+            <div class="showcase-image">
+                <img src="liverosin-product.jpg" alt="Live Rosin Concentrates">
+            </div>
+            <h3>CONCENTRATES</h3>
+            <button class="btn-explore" onclick="showPage('liverosin'); return false;">EXPLORE</button>
+        </div>
+
+        <!-- Infused Pre-Rolls -->
+        <div class="showcase-card">
+            <div class="showcase-image">
+                <img src="hashhole-joint.jpg" alt="Hash Hole Pre-Rolls">
+            </div>
+            <h3>INFUSED PRE-ROLLS</h3>
+            <button class="btn-explore" onclick="showPage('hashhole'); return false;">EXPLORE</button>
+        </div>
+    </div>
+</section>
 
         <!-- About Section -->
         <section class="section about-section" id="about">
