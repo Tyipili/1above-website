@@ -112,3 +112,23 @@ function toggleProductDetails() {
         }, 400);
     }
 }
+
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburgerBtn');
+    
+    if (navLinks && hamburger) {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+}
+
+function closeMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburgerBtn');
+    
+    if (navLinks && hamburger) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+}
