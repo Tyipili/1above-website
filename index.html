@@ -97,8 +97,6 @@
     </div>
 
     <!-- Hash Hole Product Page -->
-<!-- Replace the hashholePage div in your index.html with this: -->
-
 <div id="hashholePage" class="page-container">
     <div class="ocs-product-page">
         <div class="ocs-container">
@@ -261,6 +259,169 @@
     </div>
 </div>
     <!-- Hash Hole Product Page ends -->
+
+<!-- Juice Bar Product Page -->
+<div id="juicebarPage" class="page-container">
+    <div class="ocs-product-page">
+        <div class="ocs-container">
+            <!-- Breadcrumb -->
+            <div class="ocs-breadcrumb">
+                <a href="#" onclick="showPage('home'); return false;">1ABOVE</a>
+            </div>
+
+            <!-- Product Title -->
+            <h1 class="ocs-product-title">Juice Bar Rosin AIO</h1>
+
+            <div class="ocs-product-layout">
+                <!-- Left Side - Product Image -->
+                <div class="ocs-product-gallery">
+                    <div class="ocs-main-image">
+                        <img id="mainJuicebarImage" src="juicebar-device.jpg" alt="Juice Bar Rosin AIO">
+                    </div>
+                    <div class="ocs-image-thumbnails">
+                        <img src="juicebar-device.jpg" alt="Juice Bar Device" class="ocs-thumbnail active" onclick="changeJuicebarImage('juicebar-device.jpg', this)">
+                        <img src="juicebar-package.jpg" alt="Juice Bar Package" class="ocs-thumbnail" onclick="changeJuicebarImage('juicebar-package.jpg', this)">
+                        <img src="juicebar-box.jpg" alt="Juice Bar Box" class="ocs-thumbnail" onclick="changeJuicebarImage('juicebar-box.jpg', this)">
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Info -->
+                <div class="ocs-product-info">
+                    <!-- THC Gauge -->
+                    <div class="ocs-gauge-container">
+                        <div class="ocs-gauge">
+                            <div class="ocs-gauge-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#C8A951" stroke-width="8" 
+                                            stroke-dasharray="283" stroke-dashoffset="30" 
+                                            transform="rotate(-90 50 50)"/>
+                                </svg>
+                                <div class="ocs-gauge-label">
+                                    <span class="ocs-gauge-type">THC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ocs-gauge-values">
+                            <div class="ocs-gauge-percent">76.00 - 82.00%</div>
+                            <div class="ocs-gauge-mg">760.00 - 820.00 mg/g</div>
+                        </div>
+                    </div>
+
+                    <!-- CBD Gauge -->
+                    <div class="ocs-gauge-container">
+                        <div class="ocs-gauge">
+                            <div class="ocs-gauge-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#4FC3F7" stroke-width="8" 
+                                            stroke-dasharray="283" stroke-dashoffset="265" 
+                                            transform="rotate(-90 50 50)"/>
+                                </svg>
+                                <div class="ocs-gauge-label">
+                                    <span class="ocs-gauge-type">CBD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ocs-gauge-values">
+                            <div class="ocs-gauge-percent">0.00 - 6.00%</div>
+                            <div class="ocs-gauge-mg">0.00 - 60.00 mg/g</div>
+                        </div>
+                    </div>
+
+                    <!-- Plant Type -->
+                    <div class="ocs-plant-type">
+                        <div class="ocs-plant-label">
+                            <span>PLANT TYPE</span>
+                        </div>
+                        <div class="ocs-plant-value">Hybrid</div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="ocs-size-section">
+                        <div class="ocs-size-label">SIZE</div>
+                        <div class="ocs-size-options">
+                            <button class="ocs-size-btn active">1x0.5g</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="ocs-description">
+                        <p>Juice Bar Rosin all-in-one offers a seamless experience with high quality rosin, combining solventless extraction and advanced vaporizing in a device with a glass chamber and ceramic atomizer.</p>
+                        <a href="#" class="ocs-learn-more" onclick="toggleJuicebarDetails(); return false;">
+                            <span id="learnMoreJuicebarText">LEARN MORE</span> <span id="learnMoreJuicebarArrow">›</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Section (Hidden by default) -->
+            <div class="ocs-details-section" id="juicebarDetailsSection" style="display: none;">
+                <h2>About This Product</h2>
+                <p class="ocs-about-description">Juice Bar Rosin all-in-one is designed to deliver a seamless user experience, catering to both seasoned connoisseurs and newcomers alike. Live rosin crafted exclusively from high quality fruity and exotic genetics, this product combines solventless extraction with cutting edge vaporizing technology in a convenient all-in-one device. This product promises to redefine your cannabis experience. The state-of-the-art device is programmed to the perfect heating temperature with an all glass chamber and a ceramic atomizer.</p>
+                
+                <table class="ocs-details-table">
+                    <tr>
+                        <td class="ocs-detail-label">LICENSED PRODUCER</td>
+                        <td class="ocs-detail-value">2380996 Ontario Inc. o/a Blue Harbour Organics</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">BRAND</td>
+                        <td class="ocs-detail-value">1Above</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">POTENCY</td>
+                        <td class="ocs-detail-value">Very Strong</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">THC</td>
+                        <td class="ocs-detail-value">76.00 - 82.00% | 760.00 - 820.00 mg/g</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">CBD</td>
+                        <td class="ocs-detail-value">0.00 - 6.00% | 0.00 - 60.00 mg/g</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">PLANT TYPE</td>
+                        <td class="ocs-detail-value">Hybrid</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">STRAIN NAME</td>
+                        <td class="ocs-detail-value">Cookies n Chem</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">EXTRACTION PROCESS</td>
+                        <td class="ocs-detail-value">Solventless</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">TERPENES</td>
+                        <td class="ocs-detail-value">Beta-Caryophyllene, Beta-Pinene, Limonene, Linalool, Myrcene</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROWING PROVINCE</td>
+                        <td class="ocs-detail-value">Ontario</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROW METHOD</td>
+                        <td class="ocs-detail-value">Indoor</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROW MEDIUM</td>
+                        <td class="ocs-detail-value">Cocoa Fibre</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROW ROOM LIGHTING</td>
+                        <td class="ocs-detail-value">HPS and LED</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">DRYING METHOD</td>
+                        <td class="ocs-detail-value">Fresh Frozen</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
     
     <!-- Stockists Page -->
     <div id="stockistsPage" class="page-container">
