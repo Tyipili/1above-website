@@ -563,14 +563,8 @@ nav .btn-subscribe:hover {
 /* About Section */
 .about-section {
     background: #FAFAFA;
-    padding-bottom: 80px;
-}
-
-/* Contact Section */
-.contact-section {
-    background: white;
     border-top: 4px solid #C8A951;
-    padding-top: 80px;
+    padding-bottom: 80px;
     margin-top: 0;
 }
 
@@ -1879,3 +1873,4 @@ footer {
         font-size: 20px;
     }
 }
+
