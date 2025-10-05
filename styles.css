@@ -261,9 +261,10 @@ nav .btn-subscribe:hover {
         width: 100%;
         background: #FAFAFA;
         flex-direction: column;
-        padding: 20px;
+        display: flex;
+        padding: 20px 0;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: left 0.3s ease;
+        transition: left 0.3s ease-in-out;
         gap: 0;
         z-index: 999;
         list-style: none;
@@ -271,13 +272,14 @@ nav .btn-subscribe:hover {
     }
 
     nav .nav-links.active {
-        left: 0;
+        left: 0 !important;
     }
 
     nav .nav-links li {
         width: 100%;
         border-bottom: 1px solid #e0e0e0;
         margin: 0;
+        display: block;
     }
 
     nav .nav-links li:last-child {
@@ -286,10 +288,15 @@ nav .btn-subscribe:hover {
 
     nav .nav-links a {
         display: block;
-        padding: 15px 10px;
+        padding: 15px 20px;
         width: 100%;
         color: #333;
         text-decoration: none;
+        font-size: 14px;
+    }
+
+    nav .nav-links a:hover {
+        background: #f0f0f0;
     }
 
     nav .nav-container {
@@ -1725,27 +1732,6 @@ footer {
 
     .ocs-cta-section {
         padding: 40px 20px;
-    }
-}
-
-/* DEBUG: Force mobile menu visible */
-@media (max-width: 768px) {
-    nav .nav-links {
-        position: fixed !important;
-        top: 80px !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: #FF0000 !important; /* Red background to see it */
-        flex-direction: column !important;
-        display: flex !important;
-        padding: 20px !important;
-        z-index: 9999 !important;
-    }
-    
-    nav .nav-links li {
-        display: block !important;
-        background: yellow !important;
-        padding: 10px !important;
     }
 }
 
