@@ -39,6 +39,7 @@ function showPage(page) {
     const pageMap = {
         'home': 'homePage',
         'hashhole': 'hashholePage',
+        'juicebar': 'juicebarPage',
         'products': 'productsPage',
         'stockists': 'stockistsPage',
         'coa': 'coaPage'
