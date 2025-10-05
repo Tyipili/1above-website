@@ -40,6 +40,7 @@ function showPage(page) {
         'home': 'homePage',
         'hashhole': 'hashholePage',
         'juicebar': 'juicebarPage',
+        'liverosin': 'liverosinPage',
         'products': 'productsPage',
         'stockists': 'stockistsPage',
         'coa': 'coaPage'
