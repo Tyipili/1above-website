@@ -256,7 +256,7 @@ nav .btn-subscribe:hover {
 
     nav .nav-links {
         position: fixed;
-        top: 70px;
+        top: 80px;
         left: -100%;
         width: 100%;
         background: #FAFAFA;
@@ -265,7 +265,9 @@ nav .btn-subscribe:hover {
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         transition: left 0.3s ease;
         gap: 0;
-        z-index: 1000;
+        z-index: 999;
+        list-style: none;
+        margin: 0;
     }
 
     nav .nav-links.active {
@@ -275,6 +277,7 @@ nav .btn-subscribe:hover {
     nav .nav-links li {
         width: 100%;
         border-bottom: 1px solid #e0e0e0;
+        margin: 0;
     }
 
     nav .nav-links li:last-child {
@@ -285,6 +288,8 @@ nav .btn-subscribe:hover {
         display: block;
         padding: 15px 10px;
         width: 100%;
+        color: #333;
+        text-decoration: none;
     }
 
     nav .nav-container {
@@ -1722,4 +1727,5 @@ footer {
         padding: 40px 20px;
     }
 }
+
 
