@@ -606,90 +606,91 @@
     </section>
 </div>
 
-    <!-- COA Page -->
-    <div id="coaPage" class="page-container">
-        <div class="coa-header">
-            <h1>Certificates of Analysis</h1>
-            <p>Quality you can verify. View lab test results and certificates of analysis for all 1Above products.</p>
+<!-- COA Page -->
+<div id="coaPage" class="page-container">
+    <div class="coa-header">
+        <h1>Certificates of Analysis</h1>
+        <p>Quality you can verify. View lab test results and certificates of analysis for all 1Above products.</p>
+    </div>
+
+    <section class="section">
+        <div class="coa-search">
+            <h3>Search by Lot Number</h3>
+            <div class="search-box">
+                <input type="text" id="lotSearch" placeholder="Enter lot number (e.g., LOT123456)">
+                <button class="btn-search" onclick="searchLot()">Search</button>
+            </div>
+            <p class="search-help">Find your lot number on the product packaging</p>
         </div>
 
-        <section class="section">
-            <div class="coa-search">
-                <h3>Search by Lot Number</h3>
-                <div class="search-box">
-                    <input type="text" id="lotSearch" placeholder="Enter lot number (e.g., LOT123456)">
-                    <button class="btn-search" onclick="searchLot()">Search</button>
-                </div>
-                <p class="search-help">Find your lot number on the product packaging</p>
-            </div>
-
-            <div class="coa-products">
-                <h2>Browse by Product</h2>
-                
-                <div class="coa-product-card">
-                    <div class="coa-product-info">
-                        <div class="product-image-small">💨</div>
-                        <div>
-                            <h3>Premium Vape Cartridge</h3>
-                            <p class="product-type">1.0G 510 Live Resin Vape</p>
-                        </div>
+        <div class="coa-products">
+            <h2>Browse by Product</h2>
+            
+            <!-- Hash Hole Product Card -->
+            <div class="coa-product-card" onclick="showPage('hashhole')" style="cursor: pointer;">
+                <div class="coa-product-info">
+                    <div class="product-image-small">
+                        <img src="hashhole-joint.jpg" alt="Hash Hole" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="coa-variants">
-                        <div class="coa-variant">
-                            <span>Super Lemon Haze</span>
-                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
-                        </div>
-                        <div class="coa-variant">
-                            <span>Blueberry Kush</span>
-                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
-                        </div>
+                    <div>
+                        <h3>Hash Hole 2g</h3>
+                        <p class="product-type">2g Infused Pre-roll</p>
                     </div>
                 </div>
-
-                <div class="coa-product-card">
-                    <div class="coa-product-info">
-                        <div class="product-image-small">🖊️</div>
-                        <div>
-                            <h3>Disposable Vape</h3>
-                            <p class="product-type">1.0G All-In-One Vape</p>
-                        </div>
-                    </div>
-                    <div class="coa-variants">
-                        <div class="coa-variant">
-                            <span>Miracle Alien</span>
-                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
-                        </div>
-                        <div class="coa-variant">
-                            <span>Sour ZKZ</span>
-                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="coa-product-card">
-                    <div class="coa-product-info">
-                        <div class="product-image-small">💎</div>
-                        <div>
-                            <h3>Live Resin</h3>
-                            <p class="product-type">Premium Concentrate</p>
-                        </div>
-                    </div>
-                    <div class="coa-variants">
-                        <div class="coa-variant">
-                            <span>Full Spectrum</span>
-                            <a href="#" class="btn-view-coa" onclick="alert('COA document would open here'); return false;">View COA</a>
-                        </div>
+                <div class="coa-variants">
+                    <div class="coa-variant">
+                        <span>Cap Junky</span>
+                        <a href="hashhole-coa.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
                     </div>
                 </div>
             </div>
 
-            <div class="coa-help">
-                <h3>Can't Find Your COA?</h3>
-                <p>If you can't find your lot number in the search or listings, it might be from an older batch that's been archived or a new one that's not in our system yet. Drop us a message and we'll hook you up.</p>
-                <button class="btn-contact" onclick="showPage('home'); return false;">Contact Us</button>
+            <!-- Juice Bar Product Card -->
+            <div class="coa-product-card" onclick="showPage('juicebar')" style="cursor: pointer;">
+                <div class="coa-product-info">
+                    <div class="product-image-small">
+                        <img src="juicebar-device.jpg" alt="Juice Bar" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                        <h3>Juice Bar Rosin AIO</h3>
+                        <p class="product-type">0.5g Rosin AIO</p>
+                    </div>
+                </div>
+                <div class="coa-variants">
+                    <div class="coa-variant">
+                        <span>Cookies n Chem</span>
+                        <a href="juicebar-coa.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+
+            <!-- Live Rosin Product Card -->
+            <div class="coa-product-card" onclick="showPage('liverosin')" style="cursor: pointer;">
+                <div class="coa-product-info">
+                    <div class="product-image-small">
+                        <img src="liverosin-product.jpg" alt="Live Rosin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                        <h3>73u Live Rosin</h3>
+                        <p class="product-type">1g Live Rosin</p>
+                    </div>
+                </div>
+                <div class="coa-variants">
+                    <div class="coa-variant">
+                        <span>Resin Crusher</span>
+                        <a href="liverosin-coa.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coa-help">
+            <h3>Can't Find Your COA?</h3>
+            <p>If you can't find your lot number in the search or listings, it might be from an older batch that's been archived or a new one that's not in our system yet. Drop us a message and we'll hook you up.</p>
+            <button class="btn-contact" onclick="showPage('home'); return false;">Contact Us</button>
+        </div>
+    </section>
+</div>
 
     <!-- Footer -->
     <footer>
