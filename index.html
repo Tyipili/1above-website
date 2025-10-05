@@ -423,7 +423,172 @@
         </div>
     </div>
 </div>
-    
+    <!-- Juice Bar Product Page ends -->
+
+    <!-- Live Rosin Product Page -->
+<div id="liverosinPage" class="page-container">
+    <div class="ocs-product-page">
+        <div class="ocs-container">
+            <!-- Breadcrumb -->
+            <div class="ocs-breadcrumb">
+                <a href="#" onclick="showPage('home'); return false;">1ABOVE</a>
+            </div>
+
+            <!-- Product Title -->
+            <h1 class="ocs-product-title">73u Live Rosin</h1>
+
+            <div class="ocs-product-layout">
+                <!-- Left Side - Product Image -->
+                <div class="ocs-product-gallery">
+                    <div class="ocs-main-image">
+                        <img id="mainLiverosinImage" src="liverosin-product.jpg" alt="73u Live Rosin">
+                    </div>
+                    <div class="ocs-image-thumbnails">
+                        <img src="liverosin-product.jpg" alt="Live Rosin Product" class="ocs-thumbnail active" onclick="changeLiverosinImage('liverosin-product.jpg', this)">
+                        <img src="liverosin-jar.jpg" alt="Live Rosin Jar" class="ocs-thumbnail" onclick="changeLiverosinImage('liverosin-jar.jpg', this)">
+                        <img src="liverosin-jar-label.jpg" alt="Live Rosin Label" class="ocs-thumbnail" onclick="changeLiverosinImage('liverosin-jar-label.jpg', this)">
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Info -->
+                <div class="ocs-product-info">
+                    <!-- THC Gauge -->
+                    <div class="ocs-gauge-container">
+                        <div class="ocs-gauge">
+                            <div class="ocs-gauge-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#C8A951" stroke-width="8" 
+                                            stroke-dasharray="283" stroke-dashoffset="35" 
+                                            transform="rotate(-90 50 50)"/>
+                                </svg>
+                                <div class="ocs-gauge-label">
+                                    <span class="ocs-gauge-type">THC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ocs-gauge-values">
+                            <div class="ocs-gauge-percent">75.00 - 81.00%</div>
+                            <div class="ocs-gauge-mg">750.00 - 810.00 mg/g</div>
+                        </div>
+                    </div>
+
+                    <!-- CBD Gauge -->
+                    <div class="ocs-gauge-container">
+                        <div class="ocs-gauge">
+                            <div class="ocs-gauge-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#4FC3F7" stroke-width="8" 
+                                            stroke-dasharray="283" stroke-dashoffset="265" 
+                                            transform="rotate(-90 50 50)"/>
+                                </svg>
+                                <div class="ocs-gauge-label">
+                                    <span class="ocs-gauge-type">CBD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ocs-gauge-values">
+                            <div class="ocs-gauge-percent">0.00 - 6.00%</div>
+                            <div class="ocs-gauge-mg">0.00 - 60.00 mg/g</div>
+                        </div>
+                    </div>
+
+                    <!-- Plant Type -->
+                    <div class="ocs-plant-type">
+                        <div class="ocs-plant-label">
+                            <span>PLANT TYPE</span>
+                        </div>
+                        <div class="ocs-plant-value">Hybrid</div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="ocs-size-section">
+                        <div class="ocs-size-label">SIZE</div>
+                        <div class="ocs-size-options">
+                            <button class="ocs-size-btn active">1x1g</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="ocs-description">
+                        <p>Whole plant fresh frozen made in small batches to ensure exceptional quality. Packaged in a UV protective glass jar to preserve the terpenes. Solventless and made for connoisseurs.</p>
+                        <a href="#" class="ocs-learn-more" onclick="toggleLiverosinDetails(); return false;">
+                            <span id="learnMoreLiverosinText">LEARN MORE</span> <span id="learnMoreLiverosinArrow">›</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Section (Hidden by default) -->
+            <div class="ocs-details-section" id="liverosinDetailsSection" style="display: none;">
+                <h2>About This Product</h2>
+                <p class="ocs-about-description">Experience high purity and flavour with the 73u Live Rosin by 1Above. A niche product for cannabis consumers showcasing a carefully curated selection of genetics. Using high quality whole plant fresh frozen extraction, each batch is made in small, limited quantities to ensure exceptional quality. Each gram is carefully hand packaged in a UV protective child proof glass jar that is completely airtight to preserve the integrity of the rosin inside.</p>
+                
+                <table class="ocs-details-table">
+                    <tr>
+                        <td class="ocs-detail-label">LICENSED PRODUCER</td>
+                        <td class="ocs-detail-value">2380996 Ontario Inc. o/a Blue Harbour Organics</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">BRAND</td>
+                        <td class="ocs-detail-value">1Above</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">POTENCY</td>
+                        <td class="ocs-detail-value">Very Strong</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">THC</td>
+                        <td class="ocs-detail-value">75.00 - 81.00% | 750.00 - 810.00 mg/g</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">CBD</td>
+                        <td class="ocs-detail-value">0.00 - 6.00% | 0.00 - 60.00 mg/g</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">PLANT TYPE</td>
+                        <td class="ocs-detail-value">Hybrid</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">STRAIN NAME</td>
+                        <td class="ocs-detail-value">Resin Crusher</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">EXTRACTION PROCESS</td>
+                        <td class="ocs-detail-value">Solventless</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">TERPENES</td>
+                        <td class="ocs-detail-value">Alpha-Pinene, Beta-Caryophyllene, Beta-Pinene, Limonene, Myrcene</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROWING PROVINCE</td>
+                        <td class="ocs-detail-value">Ontario</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROW METHOD</td>
+                        <td class="ocs-detail-value">Greenhouse</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROW MEDIUM</td>
+                        <td class="ocs-detail-value">Cocoa Fibre</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">GROW ROOM LIGHTING</td>
+                        <td class="ocs-detail-value">HPS and LED</td>
+                    </tr>
+                    <tr>
+                        <td class="ocs-detail-label">DRYING METHOD</td>
+                        <td class="ocs-detail-value">Fresh Frozen</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Live Rosin Product Page ends -->
     <!-- Stockists Page -->
     <div id="stockistsPage" class="page-container">
         <div class="stockists-header">
