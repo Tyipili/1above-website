@@ -23,23 +23,31 @@
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo" onclick="showPage('home'); return false;">
-                <img src="logo.png" alt="1Above Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
-                <li><a href="#" onclick="showPage('hashhole'); return false;">Hash Hole</a></li>
-                <li><a href="#" onclick="showPage('stockists'); return false;">Stockists</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="#" class="btn-find" onclick="showPage('coa'); return false;">Find Your OCS</a>
-                <a href="#" class="btn-subscribe">Subscribe</a>
-            </div>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="#" class="logo" onclick="showPage('home'); return false;">
+            <img src="logo.png" alt="1Above Logo">
+        </a>
+        
+        <!-- Hamburger Menu Icon -->
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" onclick="showPage('home'); closeMobileMenu(); return false;">Home</a></li>
+            <li><a href="#" onclick="showPage('hashhole'); closeMobileMenu(); return false;">Hash Hole</a></li>
+            <li><a href="#" onclick="showPage('stockists'); closeMobileMenu(); return false;">Stockists</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="btn-find" onclick="showPage('coa'); return false;">Find Your OCS</a>
+            <a href="#" class="btn-subscribe">Subscribe</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Home Page -->
     <div id="homePage" class="page-container active">
