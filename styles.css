@@ -1091,7 +1091,6 @@ footer {
         transform: scale(0.98);
     }
 }
-
 /* OCS-Style Product Page */
 .ocs-product-page {
     background: #FAFAFA;
@@ -1289,7 +1288,6 @@ footer {
 /* Size Section */
 .ocs-size-section {
     padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .ocs-size-label {
