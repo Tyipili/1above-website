@@ -65,14 +65,80 @@ function showPage(page) {
 }
 
 function searchLot() {
-    const lotNumber = document.getElementById('lotSearch').value.trim();
+    const lotNumber = document.getElementById('lotSearch').value.trim().toUpperCase();
     
     if (!lotNumber) {
-        alert('Please enter a lot number');
+        // If search is empty, show all products and reset
+        resetCOADisplay();
         return;
     }
     
-    alert(`Searching for lot number: ${lotNumber}\n\nThis would display the COA document for this lot number.`);
+    // Get all product cards
+    const productCards = document.querySelectorAll('.coa-product-card');
+    let foundMatch = false;
+    
+    productCards.forEach(card => {
+        const variants = card.querySelectorAll('.coa-variant');
+        let hasMatch = false;
+        
+        variants.forEach(variant => {
+            const lotText = variant.querySelector('span').textContent;
+            const lotCode = lotText.replace('Lot ', '');
+            
+            if (lotCode.includes(lotNumber)) {
+                variant.style.display = 'flex';
+                variant.classList.remove('coa-hidden');
+                hasMatch = true;
+                foundMatch = true;
+            } else {
+                variant.style.display = 'none';
+            }
+        });
+        
+        // Show or hide the entire product card
+        if (hasMatch) {
+            card.classList.remove('filtered-out');
+            // Hide the "View All" button during search
+            const viewAllBtn = card.querySelector('.btn-view-all-coa');
+            if (viewAllBtn) {
+                viewAllBtn.style.display = 'none';
+            }
+        } else {
+            card.classList.add('filtered-out');
+        }
+    });
+    
+    if (!foundMatch) {
+        alert(`No COA found for lot number: ${lotNumber}`);
+        resetCOADisplay();
+    }
+}
+
+function resetCOADisplay() {
+    const productCards = document.querySelectorAll('.coa-product-card');
+    
+    productCards.forEach(card => {
+        card.classList.remove('filtered-out');
+        
+        const variants = card.querySelectorAll('.coa-variant');
+        variants.forEach((variant, index) => {
+            // Show first 3, hide the rest
+            if (index < 3) {
+                variant.style.display = 'flex';
+                variant.classList.remove('coa-hidden');
+            } else {
+                variant.style.display = 'none';
+                variant.classList.add('coa-hidden');
+            }
+        });
+        
+        // Reset and show "View All" button if there are hidden items
+        const viewAllBtn = card.querySelector('.btn-view-all-coa');
+        if (viewAllBtn) {
+            viewAllBtn.style.display = 'block';
+            viewAllBtn.textContent = 'View All COAs';
+        }
+    });
 }
 
 function changeProductImage(imageSrc, thumbnailElement) {
