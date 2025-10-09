@@ -751,5 +751,26 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function toggleAllCOAs(product) {
+            const container = document.getElementById(product + '-coas');
+            const hiddenCOAs = container.querySelectorAll('.coa-hidden');
+            const button = event.target;
+            
+            hiddenCOAs.forEach(coa => {
+                if (coa.style.display === 'flex') {
+                    coa.style.display = 'none';
+                } else {
+                    coa.style.display = 'flex';
+                }
+            });
+            
+            if (button.textContent === 'View All COAs') {
+                button.textContent = 'Show Less';
+            } else {
+                button.textContent = 'View All COAs';
+            }
+        }
+    </script>
 </body>
 </html>
