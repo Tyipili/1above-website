@@ -1,6 +1,6 @@
 # 1Above - Premium Cannabis Products Website
 
-![1Above Logo](imqages\logo.png)
+![1Above Logo](imqages/logo.png)
 
 A professional, responsive website for 1Above cannabis products featuring an age verification system, product catalogs, and certificate of analysis (COA) lookup functionality.
 
