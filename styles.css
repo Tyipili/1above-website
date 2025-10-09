@@ -689,6 +689,34 @@ nav .btn-subscribe:hover {
     color: #333;
 }
 
+.coa-variant.coa-hidden {
+    display: none;
+}
+
+.btn-view-all-coa {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 15px;
+    background: transparent;
+    color: #1C352D;
+    border: 2px solid #1C352D;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-view-all-coa:hover {
+    background: #1C352D;
+    color: #FAFAFA;
+}
+
+.coa-product-card.filtered-out {
+    display: none;
+}
+
 .btn-view-coa {
     padding: 10px 25px;
     background: #1C352D;
