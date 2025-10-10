@@ -667,30 +667,58 @@ nav .btn-subscribe:hover {
     font-weight: 600;
 }
 
-.coa-variants {
+.coa-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    margin-top: 25px;
 }
 
-.coa-variant {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+.coa-card {
+    position: relative;
     background: #FAFAFA;
-    border: 1px solid #e0e0e0;
-    gap: 15px;
-    flex-wrap: wrap;
+    border: 2px solid #e0e0e0;
+    padding: 20px 15px;
+    text-align: center;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    cursor: pointer;
 }
 
-.coa-variant span {
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
+.coa-card:hover {
+    border-color: #C8A951;
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(28, 53, 45, 0.1);
 }
 
-.coa-variant.coa-hidden {
+.coa-card.coa-hidden {
     display: none;
+}
+
+.coa-lot-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1C352D;
+    letter-spacing: 0.5px;
+}
+
+.coa-external-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.coa-card:hover .coa-external-icon {
+    color: #C8A951;
 }
 
 .btn-view-all-coa {
@@ -715,64 +743,6 @@ nav .btn-subscribe:hover {
 
 .coa-product-card.filtered-out {
     display: none;
-}
-
-.btn-view-coa {
-    padding: 10px 25px;
-    background: #1C352D;
-    color: #FAFAFA;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-    white-space: nowrap;
-    display: inline-block;
-}
-
-.btn-view-coa:hover {
-    background: #2A4D42;
-}
-
-.coa-help {
-    background: #1C352D;
-    color: #FAFAFA;
-    padding: 50px 30px;
-    text-align: center;
-}
-
-.coa-help h3 {
-    font-size: clamp(22px, 3vw, 28px);
-    color: #C8A951;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.coa-help p {
-    font-size: clamp(14px, 2vw, 16px);
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.7;
-    color: rgba(250, 250, 250, 0.9);
-}
-
-.btn-contact {
-    padding: 15px 40px;
-    background: #C8A951;
-    color: #1C352D;
-    border: none;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.btn-contact:hover {
-    background: #B39641;
 }
 
 .stockists-header h1 {
@@ -1653,6 +1623,10 @@ footer {
     .ocs-gauge-container {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .coa-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
