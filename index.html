@@ -71,7 +71,7 @@
             <div class="showcase-image">
                 <img src="images/products/juicebar-device.jpg" alt="Juice Bar Vapes">
             </div>
-            <h3>JUICE BAR ROSIN AIO</h3>
+            <h3>VAPES</h3>
             <button class="btn-explore" onclick="showPage('juicebar'); return false;">EXPLORE</button>
         </div>
 
@@ -80,7 +80,7 @@
             <div class="showcase-image">
                 <img src="images/products/liverosin-product.jpg" alt="Live Rosin Concentrates">
             </div>
-            <h3>73u LIVE ROSIN</h3>
+            <h3>CONCENTRATES</h3>
             <button class="btn-explore" onclick="showPage('liverosin'); return false;">EXPLORE</button>
         </div>
 
@@ -89,7 +89,7 @@
             <div class="showcase-image">
                 <img src="images/products/hashhole-joint.jpg" alt="Hash Hole Pre-Rolls">
             </div>
-            <h3>HASH HOLE</h3>
+            <h3>INFUSED PRE-ROLLS</h3>
             <button class="btn-explore" onclick="showPage('hashhole'); return false;">EXPLORE</button>
         </div>
     </div>
@@ -640,11 +640,15 @@
                         <p class="product-type">2g Infused Pre-roll</p>
                     </div>
                 </div>
-                <div class="coa-variants" id="hashhole-coas">
-                    <div class="coa-variant">
-                        <span>Lot HH0008</span>
-                        <a href="images/documents/hashhole/HH0008.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
+                <div class="coa-grid" id="hashhole-coas">
+                    <a href="images/documents/hashhole/HH0008.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">HH0008</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
@@ -659,15 +663,23 @@
                         <p class="product-type">0.5g Rosin AIO</p>
                     </div>
                 </div>
-                <div class="coa-variants" id="juicebar-coas">
-                    <div class="coa-variant">
-                        <span>Lot JB0001</span>
-                        <a href="images/documents/juicebar/JB0001.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant">
-                        <span>Lot JB0002</span>
-                        <a href="images/documents/juicebar/JB0002.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
+                <div class="coa-grid" id="juicebar-coas">
+                    <a href="images/documents/juicebar/JB0001.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">JB0001</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/juicebar/JB0002.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">JB0002</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
@@ -682,40 +694,66 @@
                         <p class="product-type">1g Live Rosin</p>
                     </div>
                 </div>
-                <div class="coa-variants" id="liverosin-coas">
-                    <div class="coa-variant">
-                        <span>Lot LR0001</span>
-                        <a href="images/documents/liverosin/LR0001.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant">
-                        <span>Lot LR0002</span>
-                        <a href="images/documents/liverosin/LR0002.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant">
-                        <span>Lot LR0003</span>
-                        <a href="images/documents/liverosin/LR0003.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant coa-hidden">
-                        <span>Lot LR0004</span>
-                        <a href="images/documents/liverosin/LR0004.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant coa-hidden">
-                        <span>Lot LR0005</span>
-                        <a href="images/documents/liverosin/LR0005.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant coa-hidden">
-                        <span>Lot LR0006</span>
-                        <a href="images/documents/liverosin/LR0006.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
-                    <div class="coa-variant coa-hidden">
-                        <span>Lot LR0007</span>
-                        <a href="images/documents/liverosin/LR0007.pdf" target="_blank" class="btn-view-coa" onclick="event.stopPropagation()">View COA</a>
-                    </div>
+                <div class="coa-grid" id="liverosin-coas">
+                    <a href="images/documents/liverosin/LR0001.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0001</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/liverosin/LR0002.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0002</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/liverosin/LR0003.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0003</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/liverosin/LR0004.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0004</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/liverosin/LR0005.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0005</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/liverosin/LR0006.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0006</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="images/documents/liverosin/LR0007.pdf" target="_blank" class="coa-card" onclick="event.stopPropagation()">
+                        <span class="coa-lot-number">LR0007</span>
+                        <svg class="coa-external-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
                 </div>
-                <button class="btn-view-all-coa" onclick="toggleAllCOAs('liverosin'); event.stopPropagation();">View All COAs</button>
             </div>
         </div>
-
     </section>
 </div>
 
@@ -751,26 +789,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function toggleAllCOAs(product) {
-            const container = document.getElementById(product + '-coas');
-            const hiddenCOAs = container.querySelectorAll('.coa-hidden');
-            const button = event.target;
-            
-            hiddenCOAs.forEach(coa => {
-                if (coa.style.display === 'flex') {
-                    coa.style.display = 'none';
-                } else {
-                    coa.style.display = 'flex';
-                }
-            });
-            
-            if (button.textContent === 'View All COAs') {
-                button.textContent = 'Show Less';
-            } else {
-                button.textContent = 'View All COAs';
-            }
-        }
-    </script>
 </body>
 </html>
