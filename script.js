@@ -36,7 +36,48 @@ document.addEventListener('DOMContentLoaded', function() {
             underAge();
         });
     }
+    
+    // Initialize dynamic COA buttons
+    initializeCOAButtons();
 });
+
+function initializeCOAButtons() {
+    const productCards = document.querySelectorAll('.coa-product-card');
+    
+    productCards.forEach(card => {
+        const coaGrid = card.querySelector('.coa-grid');
+        if (!coaGrid) return;
+        
+        const allCoaCards = coaGrid.querySelectorAll('.coa-card');
+        const totalCOAs = allCoaCards.length;
+        
+        // If more than 6 COAs, add "View All" button
+        if (totalCOAs > 6) {
+            // Hide COAs beyond the 6th
+            allCoaCards.forEach((coaCard, index) => {
+                if (index >= 6) {
+                    coaCard.classList.add('coa-hidden');
+                    coaCard.style.display = 'none';
+                }
+            });
+            
+            // Get product ID from the grid ID
+            const gridId = coaGrid.id;
+            const productId = gridId.replace('-coas', '');
+            
+            // Create and add button
+            const button = document.createElement('button');
+            button.className = 'btn-view-all-coa';
+            button.textContent = 'View All COAs';
+            button.onclick = function(e) {
+                toggleAllCOAs(productId);
+                e.stopPropagation();
+            };
+            
+            coaGrid.parentNode.appendChild(button);
+        }
+    });
+}
 
 function showPage(page) {
     const pages = document.querySelectorAll('.page-container');
@@ -78,20 +119,19 @@ function searchLot() {
     let foundMatch = false;
     
     productCards.forEach(card => {
-        const variants = card.querySelectorAll('.coa-variant');
+        const coaCards = card.querySelectorAll('.coa-card');
         let hasMatch = false;
         
-        variants.forEach(variant => {
-            const lotText = variant.querySelector('span').textContent;
-            const lotCode = lotText.replace('Lot ', '');
+        coaCards.forEach(coaCard => {
+            const lotText = coaCard.querySelector('.coa-lot-number').textContent;
             
-            if (lotCode.includes(lotNumber)) {
-                variant.style.display = 'flex';
-                variant.classList.remove('coa-hidden');
+            if (lotText.includes(lotNumber)) {
+                coaCard.style.display = 'flex';
+                coaCard.classList.remove('coa-hidden');
                 hasMatch = true;
                 foundMatch = true;
             } else {
-                variant.style.display = 'none';
+                coaCard.style.display = 'none';
             }
         });
         
@@ -120,21 +160,23 @@ function resetCOADisplay() {
     productCards.forEach(card => {
         card.classList.remove('filtered-out');
         
-        const variants = card.querySelectorAll('.coa-variant');
-        variants.forEach((variant, index) => {
-            // Show first 3, hide the rest
-            if (index < 3) {
-                variant.style.display = 'flex';
-                variant.classList.remove('coa-hidden');
+        const coaCards = card.querySelectorAll('.coa-card');
+        const totalCOAs = coaCards.length;
+        
+        coaCards.forEach((coaCard, index) => {
+            // Show first 6, hide the rest
+            if (index < 6) {
+                coaCard.style.display = 'flex';
+                coaCard.classList.remove('coa-hidden');
             } else {
-                variant.style.display = 'none';
-                variant.classList.add('coa-hidden');
+                coaCard.style.display = 'none';
+                coaCard.classList.add('coa-hidden');
             }
         });
         
-        // Reset and show "View All" button if there are hidden items
+        // Reset "View All" button if it exists
         const viewAllBtn = card.querySelector('.btn-view-all-coa');
-        if (viewAllBtn) {
+        if (viewAllBtn && totalCOAs > 6) {
             viewAllBtn.style.display = 'block';
             viewAllBtn.textContent = 'View All COAs';
         }
@@ -296,5 +338,29 @@ function toggleLiverosinDetails() {
             detailsSection.style.display = 'none';
             detailsSection.classList.remove('collapsing');
         }, 400);
+    }
+}
+
+function toggleAllCOAs(product) {
+    const container = document.getElementById(product + '-coas');
+    if (!container) return;
+    
+    const hiddenCOAs = container.querySelectorAll('.coa-hidden');
+    const button = container.parentNode.querySelector('.btn-view-all-coa');
+    
+    if (!button) return;
+    
+    hiddenCOAs.forEach(coa => {
+        if (coa.style.display === 'flex') {
+            coa.style.display = 'none';
+        } else {
+            coa.style.display = 'flex';
+        }
+    });
+    
+    if (button.textContent === 'View All COAs') {
+        button.textContent = 'Show Less';
+    } else {
+        button.textContent = 'View All COAs';
     }
 }
